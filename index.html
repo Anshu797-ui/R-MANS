@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+
+  <title>R-MANS | Fashion Store</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- WELCOME -->
+  <section id="welcome" class="screen active">
+
+    <h1>R-MANS</h1>
+    <p>Premium Fashion Store</p>
+
+    <button id="continueBtn" class="gold-btn">
+      Continue
+    </button>
+
+  </section>
+
+
+  <!-- LOGIN -->
+  <section id="login" class="screen">
+
+    <h2>Customer Login</h2>
+
+    <input
+      id="customerName"
+      type="text"
+      placeholder="Your Name"
+    >
+
+    <input
+      id="phoneNumber"
+      type="tel"
+      placeholder="10-digit Mobile Number"
+    >
+
+    <div id="recaptcha-container"></div>
+
+    <button id="sendOtpBtn" class="gold-btn">
+      Send OTP
+    </button>
+
+    <input
+      id="otpCode"
+      type="text"
+      inputmode="numeric"
+      placeholder="Enter OTP"
+    >
+
+    <button id="verifyOtpBtn" class="gold-btn">
+      Verify OTP
+    </button>
+
+    <p id="loginMessage"></p>
+
+  </section>
+
+
+  <!-- HOME -->
+  <section id="home" class="screen">
+
+    <header class="top-header">
+
+      <h2>R-MANS</h2>
+
+      <button id="settingsBtn">
+        Settings
+      </button>
+
+      <button id="helpBtn">
+        Help
+      </button>
+
+    </header>
+
+    <div class="hero">
+
+      <h1>Style That Defines You</h1>
+      <p>Discover Your Fashion</p>
+
+    </div>
+
+    <h2>Our Collections</h2>
+
+    <div class="collection-grid">
+
+      <button data-collection="wedding">
+        Wedding Special
+      </button>
+
+      <button data-collection="festival">
+        Festival Special
+      </button>
+
+      <button data-collection="normal">
+        Normal Wear
+      </button>
+
+    </div>
+
+    <h2>Featured Products</h2>
+
+    <div
+      id="featuredProducts"
+      class="product-grid"
+    ></div>
+
+  </section>
+
+
+  <!-- SHOP -->
+  <section id="shop" class="screen">
+
+    <h2>Shop Products</h2>
+
+    <select id="collectionFilter">
+
+      <option value="all">All Collections</option>
+      <option value="wedding">Wedding Special</option>
+      <option value="festival">Festival Special</option>
+      <option value="normal">Normal Wear</option>
+
+    </select>
+
+    <select id="departmentFilter">
+
+      <option value="all">All Departments</option>
+      <option value="women">Women</option>
+      <option value="men">Men</option>
+      <option value="teen-boys">Teen Boys</option>
+      <option value="teen-girls">Teen Girls</option>
+      <option value="kids-boys">Kids Boys</option>
+      <option value="kids-girls">Kids Girls</option>
+
+    </select>
+
+    <select id="sizeFilter">
+
+      <option value="all">All Sizes</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+      <option value="XXL">XXL</option>
+
+    </select>
+
+    <div
+      id="productList"
+      class="product-grid"
+    ></div>
+
+  </section>
+
+
+  <!-- PRODUCT DETAILS -->
+  <section id="productDetails" class="screen">
+
+    <h2>Product Details</h2>
+
+    <div id="productDetailContent"></div>
+
+  </section>
+
+
+  <!-- CART -->
+  <section id="cart" class="screen">
+
+    <h2>My Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <h3>
+      Total:
+      <span id="cartTotal">₹0</span>
+    </h3>
+
+    <button id="bookNowBtn" class="gold-btn">
+      Book Now
+    </button>
+
+  </section>
+
+
+  <!-- CUSTOMER ORDERS -->
+  <section id="orders" class="screen">
+
+    <h2>My Bookings</h2>
+
+    <div id="orderList"></div>
+
+  </section>
+
+
+  <!-- PROFILE -->
+  <section id="profile" class="screen">
+
+    <h2>My Profile</h2>
+
+    <div id="profileInfo"></div>
+
+    <button id="developerBtn">
+      Admin Dashboard
+    </button>
+
+    <button id="logoutBtn">
+      Logout
+    </button>
+
+  </section>
+
+
+  <!-- ADMIN PASSWORD LOGIN -->
+  <section id="adminLogin" class="screen">
+
+    <h2>R-MANS Admin Verification</h2>
+
+    <p>Enter Admin Password</p>
+
+    <input
+      id="adminPassword"
+      type="password"
+      placeholder="Enter Admin Password"
+      autocomplete="current-password"
+    >
+
+    <button
+      id="adminLoginBtn"
+      class="gold-btn"
+    >
+      Verify & Continue
+    </button>
+
+    <p id="adminLoginMessage"></p>
+
+  </section>
+
+
+  <!-- ADMIN PANEL -->
+  <section id="admin" class="screen">
+
+    <h2>R-MANS Admin Panel</h2>
+
+
+    <!-- ADD PRODUCT -->
+    <h3>Add New Product</h3>
+
+    <input
+      id="adminProductName"
+      type="text"
+      placeholder="Product Name"
+    >
+
+    <input
+      id="adminProductPrice"
+      type="number"
+      placeholder="Price"
+    >
+
+    <select id="adminCollection">
+
+      <option value="normal">Normal Wear</option>
+      <option value="wedding">Wedding Special</option>
+      <option value="festival">Festival Special</option>
+
+    </select>
+
+    <select id="adminDepartment">
+
+      <option value="women">Women</option>
+      <option value="men">Men</option>
+      <option value="teen-boys">Teen Boys</option>
+      <option value="teen-girls">Teen Girls</option>
+      <option value="kids-boys">Kids Boys</option>
+      <option value="kids-girls">Kids Girls</option>
+
+    </select>
+
+    <input
+      id="adminCategory"
+      type="text"
+      placeholder="Category"
+    >
+
+    <input
+      id="adminSizes"
+      type="text"
+      placeholder="Sizes (S,M,L,XL)"
+    >
+
+    <input
+      id="adminColor"
+      type="text"
+      placeholder="Colour"
+    >
+
+    <input
+      id="adminStock"
+      type="number"
+      placeholder="Stock"
+    >
+
+    <textarea
+      id="adminDescription"
+      placeholder="Product Description"
+    ></textarea>
+
+    <label for="adminImage">
+      Product Image
+    </label>
+
+    <input
+      id="adminImage"
+      type="file"
+      accept="image/*"
+    >
+
+    <button
+      id="saveProductBtn"
+      class="gold-btn"
+    >
+      Add Product
+    </button>
+
+    <p id="adminMessage"></p>
+
+
+    <!-- MANAGE PRODUCTS -->
+    <section class="admin-products-section">
+
+      <h3>Manage Products</h3>
+
+      <div id="adminProductList"></div>
+
+    </section>
+
+
+    <!-- MANAGE CUSTOMER ORDERS -->
+    <section class="admin-orders-section">
+
+      <h3>Customer Orders</h3>
+
+      <div id="adminOrderList">
+        Loading orders...
+      </div>
+
+    </section>
+
+  </section>
+
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav">
+
+    <button
+      class="nav-btn"
+      data-screen="home"
+    >
+      Home
+    </button>
+
+    <button
+      class="nav-btn"
+      data-screen="shop"
+    >
+      Shop
+    </button>
+
+    <button
+      class="nav-btn"
+      data-screen="cart"
+    >
+      Cart
+    </button>
+
+    <button
+      class="nav-btn"
+      data-screen="orders"
+    >
+      Orders
+    </button>
+
+    <button
+      class="nav-btn"
+      data-screen="profile"
+    >
+      Profile
+    </button>
+
+  </nav>
+
+
+  <!-- SETTINGS -->
+  <div id="settingsPanel">
+
+    <button id="closeSettings">
+      Close
+    </button>
+
+    <h2>Settings</h2>
+
+    <button id="themeBtn">
+      Change Theme
+    </button>
+
+  </div>
+
+
+  <!-- NOTIFICATION -->
+  <div id="toast"></div>
+
+
+  <!-- MAIN JAVASCRIPT -->
+  <script
+    type="module"
+    src="./app.js"
+  ></script>
+
+</body>
+</html>
